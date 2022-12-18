@@ -3,6 +3,7 @@ var usageInput;
 var contributionInput;
 var testInput;
 var licenseInput;
+var licenseBadge;
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -30,6 +31,7 @@ if (data.test !== '') {
 // Licenses
 // GNU AGPLv3
 if (data.license === 'GNU AGPLv3') {
+  licenseBadge = '[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)';
   licenseInput =
 `
 ## License
@@ -45,6 +47,7 @@ You should have received a copy of the GNU Affero General Public License along w
 }
 // GNU GPLv3
 if (data.license === 'GNU GPLv3') {
+  licenseBadge = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
   licenseInput =
 `
 ## License
@@ -60,6 +63,7 @@ You should have received a copy of the GNU General Public License along with thi
 }
 // GNU LGPLv3
 if (data.license === 'GNU LGPLv3') {
+  licenseBadge = '[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)';
   licenseInput =
 `
 ## License
@@ -75,6 +79,7 @@ You should have received a copy of the GNU Affero General Public License along w
 }
 // Mozilla Public License 2.0
 if (data.license === 'Mozilla Public License 2.0') {
+  licenseBadge = '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)';
   licenseInput =
 `
 ## License
@@ -86,6 +91,7 @@ This Source Code Form is subject to the terms of the Mozilla Public License, v. 
 }
 // Apache License 2.0
 if (data.license === 'Apache License 2.0') {
+  licenseBadge = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
   licenseInput =
 `
 ## License
@@ -101,6 +107,7 @@ http://www.apache.org/licenses/LICENSE-2.0
 }
 // MIT License
 if (data.license === 'MIT License') {
+  licenseBadge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
   licenseInput =
 `
 ## License
@@ -112,6 +119,7 @@ Copyright (c) ${username}
 }
 // Boost Software License 1.0
 if (data.license === 'Boost Software License 1.0') {
+  licenseBadge = '[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)';
   licenseInput =
 `
 ## License
@@ -127,6 +135,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 // The Unlicense
 if (data.license === 'The Unlicense') {
+  licenseBadge = '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)';
   licenseInput =
 `
 ## License
@@ -194,6 +203,8 @@ ${data.test}
 
 ## Description
 ${data.description}
+
+${licenseBadge}
 
 ${tableOfContents} ${installationInput} ${usageInput} ${licenseInput} ${contributionInput} ${testInput}
 ## Questions?
