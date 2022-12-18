@@ -22,7 +22,7 @@ const questions = [
         message: 'Provide a short description for your README:',
         validate: function (input) {
             if (input === '') {
-                console.log('Title is required');
+                console.log('Description is required');
                 return false
             } else {return true};
         }
@@ -60,7 +60,7 @@ const questions = [
         message: 'What is your GitHub username?',
         validate: function (input) {
             if (input === '') {
-                console.log('Title is required');
+                console.log('Username is required');
                 return false
             } else {return true};
         }
@@ -71,17 +71,12 @@ const questions = [
         message: 'What is your e-mail address?',
         validate: function (input) {
             if (input === '') {
-                console.log('Title is required');
+                console.log('Email is required');
                 return false
             } else {return true};
         }
     },
 ];
-
-// TODO: Create a function to write README file
-// function writeToFile(data) {
-
-// }
 
 // TODO: Create a function to initialize app
 async function init() {
@@ -93,11 +88,8 @@ async function init() {
 
         const markdown = generateMarkdown(data);
 
-
         fs.writeFile('readme1.md', markdown, (err) =>
         err ? console.log(err) : console.log('Success!'))
-
-
     })
 }
 
