@@ -8,12 +8,24 @@ const questions = [
     {
         type: 'input',
         name: 'title',
-        message: 'Enter a title for your README:'
+        message: 'Enter a title for your README:',
+        validate: function (input) {
+            if (input === '') {
+                console.log('Title is required');
+                return false
+            } else {return true};
+        }
     },
     {
         type: 'input',
         name: 'description',
-        message: 'Provide a short description for your README:'
+        message: 'Provide a short description for your README:',
+        validate: function (input) {
+            if (input === '') {
+                console.log('Title is required');
+                return false
+            } else {return true};
+        }
     },
     {
         type: 'input',
@@ -23,13 +35,14 @@ const questions = [
     {
         type: 'input',
         name: 'usage',
-        message: 'Provide instrcutions and examples for use:'
+        message: 'Provide instructions and examples for use:'
     },
     {
         type: 'list',
         name: 'license',
         message: 'Choose one of the following licenses for your application:',
-        choices: ['opt1', 'opt2']
+        choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense'],
+        default: 'The Unlicense'
     },
     {
         type: 'input',
@@ -39,26 +52,36 @@ const questions = [
     {
         type: 'input',
         name: 'test',
-        message: 'Provice examples of how to run any tests for your application:'
+        message: 'Provide examples of how to run any tests for your application:'
     },
     {
         type: 'input',
         name: 'username',
-        message: 'What is your GitHub username?'
+        message: 'What is your GitHub username?',
+        validate: function (input) {
+            if (input === '') {
+                console.log('Title is required');
+                return false
+            } else {return true};
+        }
     },
     {
         type: 'input',
         name: 'email',
-        message: 'What is your e-mail address?'
+        message: 'What is your e-mail address?',
+        validate: function (input) {
+            if (input === '') {
+                console.log('Title is required');
+                return false
+            } else {return true};
+        }
     },
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(data) {
-    fs.writeFile(readme.txt, data, err => {
-        err ? console.log(err) : console.log('README has been created!')
-    })
-}
+// function writeToFile(data) {
+
+// }
 
 // TODO: Create a function to initialize app
 function init() {
