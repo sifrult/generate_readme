@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sifrult/generate_readme/issues"
   },
-  "homepage": "https://github.com/sifrult/generate_readme#readme"
+  "homepage": "https://github.com/sifrult/generate_readme#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
 }
