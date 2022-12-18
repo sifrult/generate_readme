@@ -84,23 +84,22 @@ const questions = [
 // }
 
 // TODO: Create a function to initialize app
-function init() {
+async function init() {
 
     inquirer .prompt(questions)
     .then((data) =>{
 
         generateMarkdown(data);
 
+        const markdown = generateMarkdown(data);
 
-        fs.writeFile('readme.txt', JSON.stringify(data), (err) =>
+
+        fs.writeFile('readme1.md', markdown, (err) =>
         err ? console.log(err) : console.log('Success!'))
 
 
     })
 }
-
-// Store user input into data
-
 
 // Function call to initialize app
 init();
