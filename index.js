@@ -88,7 +88,7 @@ async function init() {
 
         const markdown = generateMarkdown(data);
 
-        fs.writeFile('readme1.md', markdown, (err) =>
+        fs.writeFile('exampleREADME.md', markdown, (err) =>
         err ? console.log(err) : console.log('Success!'))
     })
 }
