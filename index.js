@@ -75,7 +75,7 @@ const questions = [
                 return false
             } else {return true};
         }
-    },
+    }
 ];
 
 // TODO: Create a function to initialize app
@@ -83,7 +83,6 @@ async function init() {
 
     inquirer .prompt(questions)
     .then((data) =>{
-
         fs.writeFile('exampleREADME.md', generateMarkdown(data), (err) =>
         err ? console.log(err) : console.log('Success!'))
     })
