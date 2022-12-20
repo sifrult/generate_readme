@@ -1,4 +1,4 @@
-# Generate Readme
+# Generate README
 
 ## Description
 This program develops a README for you based on your prompt responses. You can input installation, license, contribution, and test sections if you wish to do so. This program will also create a table of contents to link to those areas that are optional.
