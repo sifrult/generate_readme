@@ -84,11 +84,7 @@ async function init() {
     inquirer .prompt(questions)
     .then((data) =>{
 
-        generateMarkdown(data);
-
-        const markdown = generateMarkdown(data);
-
-        fs.writeFile('exampleREADME.md', markdown, (err) =>
+        fs.writeFile('exampleREADME.md', generateMarkdown(data), (err) =>
         err ? console.log(err) : console.log('Success!'))
     })
 }
