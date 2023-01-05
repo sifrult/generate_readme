@@ -7,7 +7,7 @@ This program develops a README for you based on your prompt responses. You can i
 This program uses Inquirer v 8.2.4. To install, copy and paste the following into your directory:
 
 ```sh
-npm install --save inquirer@8.2.4
+npm install
 ```
 
 To run the program, use the following command:
